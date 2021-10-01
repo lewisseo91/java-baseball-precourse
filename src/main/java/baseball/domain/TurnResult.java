@@ -1,7 +1,10 @@
 package baseball.domain;
 
+import baseball.utils.Game;
+import baseball.utils.Message;
+
 public class TurnResult {
-    StringBuilder resultString;
+    private StringBuilder resultString;
     private int strikeCount;
     private int ballCount;
 
@@ -9,6 +12,10 @@ public class TurnResult {
         this.resultString = new StringBuilder();
         this.strikeCount = strikeCount;
         this.ballCount = ballCount;
+    }
+
+    public boolean isFinished(int correctSize) {
+        return strikeCount == correctSize;
     }
 
     private void getResultNothing() {
@@ -42,4 +49,11 @@ public class TurnResult {
         return resultString.toString();
     }
 
+    public void showResult() {
+        Message.printResult(this.toString());
+
+        if (isFinished(Game.FINISH_STRIKE_COUNT)) {
+            Message.printFinishCelebration();
+        }
+    }
 }
