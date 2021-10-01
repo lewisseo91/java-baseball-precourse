@@ -4,27 +4,25 @@ import java.util.Objects;
 
 public class Ball {
     private int number;
-    private int position;
 
-    public Ball(int number, int position) {
+    public Ball(int number) {
         this.number = number;
-        this.position = position;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public int getPosition() {
-        return position;
-    }
-
     public boolean isSameBallNumber(Ball otherBall) {
         return number == otherBall.getNumber();
     }
 
-    public boolean isSamePosition(Ball otherBall) {
-        return position == otherBall.getPosition();
+    public int checkInRange(int startNumber, int endNumber) {
+        if (number >= startNumber && number <= endNumber) {
+            return 1;
+        }
+
+        return 0;
     }
 
     @Override
@@ -37,6 +35,6 @@ public class Ball {
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, position);
+        return Objects.hash(number);
     }
 }
