@@ -46,7 +46,9 @@ public class TurnResult {
 
         if (ballCount > 0) getResultBall();
 
-        return resultString.toString();
+        String result = resultString.toString();
+        resultString = new StringBuilder();
+        return result;
     }
 
     public void showResult() {
