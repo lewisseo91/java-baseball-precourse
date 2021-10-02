@@ -7,7 +7,7 @@ public enum BallStatus {
 
     private String displayName;
 
-    private BallStatus(String displayName) {
+    BallStatus(String displayName) {
         this.displayName = displayName;
     }
 
