@@ -36,14 +36,11 @@ public class TurnResult {
 
     @Override
     public String toString() {
-
         if (ballCount == 0 && strikeCount == 0) {
             getResultNothing();
             return resultString.toString();
         }
-
         if (strikeCount > 0) getResultStrike();
-
         if (ballCount > 0) getResultBall();
 
         String result = resultString.toString();

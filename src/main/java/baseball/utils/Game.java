@@ -43,6 +43,7 @@ public class Game {
         }
 
         List<Ball> balls = getBallsFromString(requestedNumbers);
+
         return new Turn(balls, TurnStatus.MY);
     }
 
